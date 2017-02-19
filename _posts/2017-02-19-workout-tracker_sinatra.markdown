@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Workout-Tracker Sinatra "
-date:   2017-02-19 17:46:03 +0000
+date:   2017-02-19 12:46:04 -0500
 ---
 
 
