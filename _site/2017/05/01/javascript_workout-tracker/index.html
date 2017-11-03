@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+
+  <title>Javascript Workout-Tracker</title>
+  <meta name="description" content="Having finished my final JavaScript project, I definitely feel like I have come a long way. It is really cool seeing all of the stuff that I have learned come together. When I first started working on this project, I had a lot of trouble because I didn’t feel too confident with JavaScript. I felt like I had kind of breezed through the JavaScript lessons without really taking the time to understand what I was learning and how to actually apply it. Due to that, when I started this project, I had no idea where to begin. Finally, I decided that the best thing would be to redo the JavaScript lessons that I was shaky on and I am so glad that I did. After redoing some of the lessons, I feel so much more confident using JavaScript and I definitely have a better appreciation for it as a whole! So here is how I applied it to my fitness tracking application that I created for my final Rails project.
+
+">
+  <meta name="author" content="">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Javascript Workout-Tracker">
+  <meta name="twitter:description" content="Having finished my final JavaScript project, I definitely feel like I have come a long way. It is really cool seeing all of the stuff that I have learned come together. When I first started working on this project, I had a lot of trouble because I didn’t feel too confident with JavaScript. I felt like I had kind of breezed through the JavaScript lessons without really taking the time to understand what I was learning and how to actually apply it. Due to that, when I started this project, I had no idea where to begin. Finally, I decided that the best thing would be to redo the JavaScript lessons that I was shaky on and I am so glad that I did. After redoing some of the lessons, I feel so much more confident using JavaScript and I definitely have a better appreciation for it as a whole! So here is how I applied it to my fitness tracking application that I created for my final Rails project.
+
+">
+  
+  <meta name="twitter:image" content="/images/favicons/favicon-194x194.png" />
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Javascript Workout-Tracker">
+  <meta property="og:description" content="Having finished my final JavaScript project, I definitely feel like I have come a long way. It is really cool seeing all of the stuff that I have learned come together. When I first started working on this project, I had a lot of trouble because I didn’t feel too confident with JavaScript. I felt like I had kind of breezed through the JavaScript lessons without really taking the time to understand what I was learning and how to actually apply it. Due to that, when I started this project, I had no idea where to begin. Finally, I decided that the best thing would be to redo the JavaScript lessons that I was shaky on and I am so glad that I did. After redoing some of the lessons, I feel so much more confident using JavaScript and I definitely have a better appreciation for it as a whole! So here is how I applied it to my fitness tracking application that I created for my final Rails project.
+
+">
+  <meta property="og:image" content="/images/favicons/favicon-194x194.png" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/images/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  
+  <link rel="stylesheet" href="/css/main.css?1509671625612190074">
+  <link rel="canonical" href="http://localhost:4000/2017/05/01/javascript_workout-tracker/">
+  <link rel="alternate" type="application/rss+xml" title="The Coders Journey" href="/feed.xml">
+</head>
+
+
+  <body>
+    <span class="mobile btn-mobile-menu">
+  <i class="icon icon-list btn-mobile-menu__icon"></i>
+  <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+</span>
+
+<header class="panel-cover" style="background-image: url(/images/cover.jpg)">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <a href="/" title="link to home of The Coders Journey">
+          <img src="/images/profile.jpg" class="user-image" alt="My Profile Photo">
+          <h1 class="panel-cover__title panel-title">The Coders Journey</h1>
+        </a>
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">The Journey 
+</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="link to The Coders Journey blog" class="blog-button">Blog</a></li>
+            </ul>
+          </nav>
+
+          <nav class="cover-navigation navigation--social">
+            <ul class="navigation">
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            <!-- RSS -->
+            <li class="navigation__item">
+              <a href="/feed.xml" title="Subscribe" target="_blank">
+                <i class="icon icon-rss"></i>
+                <span class="label">RSS</span>
+              </a>
+            </li>
+
+            </ul>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        <article class="post-container post-container--single">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="1 May 2017" class="post-meta__date date">1 May 2017</time>
+      
+    </div>
+    <h1 class="post-title">Javascript Workout-Tracker</h1>
+  </header>
+
+  <section class="post">
+    <p>Having finished my final JavaScript project, I definitely feel like I have come a long way. It is really cool seeing all of the stuff that I have learned come together. When I first started working on this project, I had a lot of trouble because I didn’t feel too confident with JavaScript. I felt like I had kind of breezed through the JavaScript lessons without really taking the time to understand what I was learning and how to actually apply it. Due to that, when I started this project, I had no idea where to begin. Finally, I decided that the best thing would be to redo the JavaScript lessons that I was shaky on and I am so glad that I did. After redoing some of the lessons, I feel so much more confident using JavaScript and I definitely have a better appreciation for it as a whole! So here is how I applied it to my fitness tracking application that I created for my final Rails project.</p>
+
+<p>The Show Resource
+One of the requirements for this project was to render a show resource using jQuery and an Active Model Serialization JSON backend. I decided to make the workout show page have a ‘Next Workout’ button and a ‘Previous Workout’ button. Basically, when either of these buttons are clicked, the next or previous workout will be shown without reloading the page. Using these buttons, you can traverse through all of the workouts in either direction without refreshing.</p>
+
+<p>So how does this work? There is a little more that goes in to rendering the show resource than what I am about to explain, but this will cover the main points of the JavaScript. I’ll use the Next button to explain. Basically, I tied an event listener onto the button so that when it is clicked, the Id of the next workout is saved and a request is made.</p>
+
+<p>$.get(“/workouts/” + nextId + “.json”, function(data) { // TO DO }</p>
+
+<p>The data sent to the function contains the serialized workout from which we can get information about the workout.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$.get("/workouts/" + nextId + ".json", function(data) {
+  $(".workoutDate").text(data["created_at"]);
+  $(".workoutContent").text(data["content"]);
+  $(".workoutCalories").text(data["calories_burned"]);
+  // reset the id to the new current id
+  $(".js-next").attr("data-id", data["id"]);
+}); Basically all that this block of code is doing is getting information about the workout from the json received on workouts/nextID.json and filling in divs on the page with the new information.
+</code></pre></div></div>
+
+<p>The Index Resource
+Another requirement is to render an index resource. Since there is so much nutrition information associated with a food item, I decided to use a ‘More Info’ button on the meals index page to allow more nutrition information to be displayed for each food item. This is pretty similar to what I did for the show resource.</p>
+
+<p>Here is the main part of the JavaScript code that I used for this part. I will walk you through what’s happening.</p>
+
+<script type="text/javascript" charset="utf-8">
+$(function () {
+  $(".js-more").on('click', function() {
+    var id = parseInt($(".js-more").attr("data-id"));
+    $.get("/meals/" + id + ".json", function(data) {
+      var foodItems = data["food_items"];
+      var foodList = "";
+
+      foodItems.forEach(function(food) {
+        foodList += '<li>Name: ' + food["name"] + '</li><br><li>Serving Size: ' + food["serving_size"] + '</li><br><li>Number of Servings: ' + food["num_servings"] + '</li><br>';
+      });
+      $("#meal-" + id + "-food_items").html(foodList);
+      $(".js-more").hide();
+    });
+    return false;
+  });
+});
+</script>
+
+<p>First, we have a function tied to the button with the class js-more (AKA the ‘More Info’ button) being clicked. When this button is clicked, the id of the meal is saved and a request is made to /meals/id.json. This is exactly like what we did for the show resource so far, except with meals instead of workouts. Just like with the workouts, we are still going to get our information from data.</p>
+
+<p>Each meal has many food items, so thanks to the Active Model Serializer, the food items can be found in data[“food_items”] Next, we iterate through the food items and we create a list in HTML of all the nutrition facts within the food item and save that list as foodList. Lastly, we put the html of foodList in an unorganized list with the Id of meal-id-food_items and we hide the ‘More Info’ button since it has already been clicked.</p>
+
+<p>Please check out my code<a href="https://github.com/Idayat8703/rails-js-workout-tracker-2.0"> here </a></p>
+
+
+  </section>
+  
+</article>
+
+
+
+      </div>
+
+      <footer class="footer">
+  <span class="footer__copyright">&copy; 2017 . All rights reserved.</span>
+</footer>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="/js/main.js?1509671625612190074"></script>
+
+
+    </div>
+  </body>
+</html>

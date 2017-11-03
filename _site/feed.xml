@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Coders Journey</title>
+    <description>The Journey 
+</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Thu, 02 Nov 2017 18:13:45 -0700</pubDate>
+    <lastBuildDate>Thu, 02 Nov 2017 18:13:45 -0700</lastBuildDate>
+    <generator>Jekyll v3.6.2</generator>
+    
+      <item>
+        <title>Javascript Workout-Tracker</title>
+        <description>&lt;p&gt;Having finished my final JavaScript project, I definitely feel like I have come a long way. It is really cool seeing all of the stuff that I have learned come together. When I first started working on this project, I had a lot of trouble because I didn’t feel too confident with JavaScript. I felt like I had kind of breezed through the JavaScript lessons without really taking the time to understand what I was learning and how to actually apply it. Due to that, when I started this project, I had no idea where to begin. Finally, I decided that the best thing would be to redo the JavaScript lessons that I was shaky on and I am so glad that I did. After redoing some of the lessons, I feel so much more confident using JavaScript and I definitely have a better appreciation for it as a whole! So here is how I applied it to my fitness tracking application that I created for my final Rails project.&lt;/p&gt;
+
+&lt;p&gt;The Show Resource
+One of the requirements for this project was to render a show resource using jQuery and an Active Model Serialization JSON backend. I decided to make the workout show page have a ‘Next Workout’ button and a ‘Previous Workout’ button. Basically, when either of these buttons are clicked, the next or previous workout will be shown without reloading the page. Using these buttons, you can traverse through all of the workouts in either direction without refreshing.&lt;/p&gt;
+
+&lt;p&gt;So how does this work? There is a little more that goes in to rendering the show resource than what I am about to explain, but this will cover the main points of the JavaScript. I’ll use the Next button to explain. Basically, I tied an event listener onto the button so that when it is clicked, the Id of the next workout is saved and a request is made.&lt;/p&gt;
+
+&lt;p&gt;$.get(“/workouts/” + nextId + “.json”, function(data) { // TO DO }&lt;/p&gt;
+
+&lt;p&gt;The data sent to the function contains the serialized workout from which we can get information about the workout.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$.get(&quot;/workouts/&quot; + nextId + &quot;.json&quot;, function(data) {
+  $(&quot;.workoutDate&quot;).text(data[&quot;created_at&quot;]);
+  $(&quot;.workoutContent&quot;).text(data[&quot;content&quot;]);
+  $(&quot;.workoutCalories&quot;).text(data[&quot;calories_burned&quot;]);
+  // reset the id to the new current id
+  $(&quot;.js-next&quot;).attr(&quot;data-id&quot;, data[&quot;id&quot;]);
+}); Basically all that this block of code is doing is getting information about the workout from the json received on workouts/nextID.json and filling in divs on the page with the new information.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The Index Resource
+Another requirement is to render an index resource. Since there is so much nutrition information associated with a food item, I decided to use a ‘More Info’ button on the meals index page to allow more nutrition information to be displayed for each food item. This is pretty similar to what I did for the show resource.&lt;/p&gt;
+
+&lt;p&gt;Here is the main part of the JavaScript code that I used for this part. I will walk you through what’s happening.&lt;/p&gt;
+
+&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;
+$(function () {
+  $(&quot;.js-more&quot;).on('click', function() {
+    var id = parseInt($(&quot;.js-more&quot;).attr(&quot;data-id&quot;));
+    $.get(&quot;/meals/&quot; + id + &quot;.json&quot;, function(data) {
+      var foodItems = data[&quot;food_items&quot;];
+      var foodList = &quot;&quot;;
+
+      foodItems.forEach(function(food) {
+        foodList += '&lt;li&gt;Name: ' + food[&quot;name&quot;] + '&lt;/li&gt;&lt;br&gt;&lt;li&gt;Serving Size: ' + food[&quot;serving_size&quot;] + '&lt;/li&gt;&lt;br&gt;&lt;li&gt;Number of Servings: ' + food[&quot;num_servings&quot;] + '&lt;/li&gt;&lt;br&gt;';
+      });
+      $(&quot;#meal-&quot; + id + &quot;-food_items&quot;).html(foodList);
+      $(&quot;.js-more&quot;).hide();
+    });
+    return false;
+  });
+});
+&lt;/script&gt;
+
+&lt;p&gt;First, we have a function tied to the button with the class js-more (AKA the ‘More Info’ button) being clicked. When this button is clicked, the id of the meal is saved and a request is made to /meals/id.json. This is exactly like what we did for the show resource so far, except with meals instead of workouts. Just like with the workouts, we are still going to get our information from data.&lt;/p&gt;
+
+&lt;p&gt;Each meal has many food items, so thanks to the Active Model Serializer, the food items can be found in data[“food_items”] Next, we iterate through the food items and we create a list in HTML of all the nutrition facts within the food item and save that list as foodList. Lastly, we put the html of foodList in an unorganized list with the Id of meal-id-food_items and we hide the ‘More Info’ button since it has already been clicked.&lt;/p&gt;
+
+&lt;p&gt;Please check out my code&lt;a href=&quot;https://github.com/Idayat8703/rails-js-workout-tracker-2.0&quot;&gt; here &lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 01 May 2017 18:11:10 -0700</pubDate>
+        <link>http://localhost:4000/2017/05/01/javascript_workout-tracker/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/05/01/javascript_workout-tracker/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Workout-tracker 2.0</title>
+        <description>&lt;p&gt;I finished my Rails final project and I am extremely happy with the results! The best part of programming this project was that I actually felt confident in what I was doing. Yes, I had to reference how to do some stuff and yes, google was my friend, but that is not a bad thing. It feels amazing that I was able to know exactly what I wanted to make, how I wanted to make it, and that I knew enough to ask the right questions and get it done.&lt;/p&gt;
+
+&lt;p&gt;I obviously used Rails to complete this project. Honestly, one of the trickiest parts was figuring out how to properly set up a new Rails app and include the right gems because in most labs this is already done for us. Luckily, Rails has a really handy guide to pretty much everything you could ever need to know!&lt;/p&gt;
+
+&lt;p&gt;I used Devise to create a user model with the ability to sign up, sign in, sign out, and more. Honestly, Devise is so awesome and saved me a whole lot of trouble! I also used Omniauth to allow users to sign in with Facebook. I find it extremely interesting to see how that works, but it is very complicated and is probably something I will have to reference for a while.&lt;/p&gt;
+
+&lt;p&gt;I added a little bit of CSS and wrapped it up. I think it turned out pretty okay.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 24 Mar 2017 19:21:09 -0700</pubDate>
+        <link>http://localhost:4000/2017/03/24/workout-tracker_2_0/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/03/24/workout-tracker_2_0/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Workout-Tracker Sinatra </title>
+        <description>&lt;p&gt;Hi there! I just completed my Sinatra Portfolio Project, which is a workout-tracker CRUD app. The app is meant to store a user’s workouts! A user is able to create an account, login, logout, view their workout, add workouts to their plan, edit items, and delete items.&lt;/p&gt;
+
+&lt;p&gt;Here’s a link to a walkthrough of my application: https://www.youtube.com/watch?v=s9rJNlf4_Dg&amp;amp;feature=youtu.be
+CRUD App&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 19 Feb 2017 09:46:04 -0800</pubDate>
+        <link>http://localhost:4000/2017/02/19/workout-tracker_sinatra/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/02/19/workout-tracker_sinatra/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>CLI gem Project</title>
+        <description>&lt;p&gt;Oh man Oh man. I’m not going to lie this was a bit of a challenge for me. I didn’t know what to do or how to start this project. But nothing was going to stop me. I had endless night of using google as my best friend. After watching Avi walk through I was able to start CLI gem which gave me steps in the right direction. I did tons of brainstorming I came up with an idea that would let me gather the most recent news article from the NYT from various categories. I think the scraping was the best part for me in general. I was kinda nervous at first but I was able to gather all the information I need to be able to have my CLI  gem working.&lt;/p&gt;
+
+&lt;p&gt;Very slowly I started to figure out how II wanted to tackle this project. Originally I wanted to put the description of each article as well. But I could think of how that would be possible. I ponder for 2 days and I thought I was stuck. I would talk my ideas through with my best friend and she told me that it would be easier to leave out the description and have the user click the link to read the full article. I gave my best friend the biggest hug because I had a serious coder’s block.&lt;/p&gt;
+
+&lt;p&gt;Then all my ideas started to come together and It made me feel good seeing the hard work and my late night being display on my computer. Gave me a lil more confidence in my future in programming.&lt;/p&gt;
+
+&lt;p&gt;Please check out me repo and give me ton of feedback.. 
+https://github.com/Idayat8703/news-trending-cli-app&lt;/p&gt;
+</description>
+        <pubDate>Sat, 14 Jan 2017 19:24:37 -0800</pubDate>
+        <link>http://localhost:4000/2017/01/14/cli_gem_project/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/01/14/cli_gem_project/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>I think I like the idea of being a back-end developer!</title>
+        <description>&lt;p&gt;Over the last couple of weeks I’ve learned a ton of HTML, CSS and other cool things in regards to Ruby. 
+When I started learning about HTML and CSS I thought it was pretty dope. I’m the type of person that needs to be able to see what it is that I’m doing and how what I’m writing changes the look of certain thing. I was able to understand the use of various classes, id, parents and children while working with CSS. It’s nice to see the changes I’m making in real time and doing the various changes to a particular site. 
+But, as I’ve continued to learn more about web devlopment. I really find myself liking the idea of being a back-end developer and making the framework of an app and building something awesome with the use of various array, hashes, using various methods to retain my information.  My journey is not yet over but back-end is pretty much my favorite at this point in time.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 18 Dec 2016 08:18:59 -0800</pubDate>
+        <link>http://localhost:4000/2016/12/18/i_think_i_like_the_idea_of_being_a_back-end_developer/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/12/18/i_think_i_like_the_idea_of_being_a_back-end_developer/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>One Month Anniversary! </title>
+        <description>&lt;p&gt;It’s been a month since I joined the world of coding. I’m not going to lie it’s been a bit tough at times. I also wanted to pull out my hair when I couldn’t figure out the code. But I’m still loving the learning experience. I know I’m on a learning curve and it will only be a matter of time before I able to code in my sleep.&lt;/p&gt;
+
+&lt;p&gt;Currently, I’m learning HTML and CSS. I think it’s cool learning how to create a website/ webpage and learning how to be creative with the CSS. I love doing the code along as It’s a great teaching tool for me to go set by step with the videos to help guide me through the process of creating different attributes on a webpage.  CSS is not easy on the first glance but once I understand the tricks of CSS, I think I will be able to get a better handle on the topic. I’m still having a great time learning this topic but I know I will get a lab that will blow my mind at the end of this topic.&lt;/p&gt;
+
+&lt;p&gt;But, overall is been a good month and I’m excited to continue learning the awesomeness of coding.&lt;/p&gt;
+
+&lt;p&gt;Bring it on!&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 30 Nov 2016 20:26:46 -0800</pubDate>
+        <link>http://localhost:4000/2016/11/30/one_month_anniversary/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/11/30/one_month_anniversary/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>A Coders Beginning! </title>
+        <description>&lt;p&gt;Hi my name is Idayat.  I’m an accounting professional who’s always had an interest in coding from childhood. From the age of 7, I always had an interest in playing video games and having fun with my computer at an early age.  I’ve always played with computer as a child and never left my computer screen until it was time for bed. As I got older, I started to get very interesting in video games from Nintendo to PS4. And, still was curious on how people developed these cool games.&lt;/p&gt;
+
+&lt;p&gt;As I attended college, I didn’t know how to pursue my interest in coding because I didn’t have much guidance.  So, I ended up going to school to do accounting. Accounting is so boring and not that interesting. As time went on, I went to a couple of meetups over the weekend to learn how to code and It was so interesting. At the time, I was learning from codeacadamy and other pretty cool websites. I also read a couple of cool books too.  But I never had the full-blown courage to say let me pursue coding professionally. Until I spoke to my significant other and told me to take coding more seriously.&lt;/p&gt;
+
+&lt;p&gt;I was very nervous at first but I said to myself everyone has their own learning curve and I will soon be able grasp everything I need to know about coding.  I’ve learned so much about coding in the last couple of days and It’s not as easy as it looks but I’m so intrigued and happy that I’m taking the steps to purse this professionally.  I’m having so much fun and I look forward to tackling my tic-tac board now because it’s a challenge that I must take on. But even as things get a little more challenging I’m having a very good time learning the different ways I can talk to my program to get an amazing output I want.  I feel like coding is my second language that I like learning.&lt;/p&gt;
+
+&lt;p&gt;Let my journey being!!!&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 12 Nov 2016 19:43:43 -0800</pubDate>
+        <link>http://localhost:4000/2016/11/12/a_coders_beginning/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/11/12/a_coders_beginning/</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

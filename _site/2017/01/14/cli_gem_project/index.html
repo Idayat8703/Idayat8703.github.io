@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+
+  <title>CLI gem Project</title>
+  <meta name="description" content="Oh man Oh man. I’m not going to lie this was a bit of a challenge for me. I didn’t know what to do or how to start this project. But nothing was going to stop me. I had endless night of using google as my best friend. After watching Avi walk through I was able to start CLI gem which gave me steps in the right direction. I did tons of brainstorming I came up with an idea that would let me gather the most recent news article from the NYT from various categories. I think the scraping was the best part for me in general. I was kinda nervous at first but I was able to gather all the information I need to be able to have my CLI  gem working.
+
+">
+  <meta name="author" content="">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CLI gem Project">
+  <meta name="twitter:description" content="Oh man Oh man. I’m not going to lie this was a bit of a challenge for me. I didn’t know what to do or how to start this project. But nothing was going to stop me. I had endless night of using google as my best friend. After watching Avi walk through I was able to start CLI gem which gave me steps in the right direction. I did tons of brainstorming I came up with an idea that would let me gather the most recent news article from the NYT from various categories. I think the scraping was the best part for me in general. I was kinda nervous at first but I was able to gather all the information I need to be able to have my CLI  gem working.
+
+">
+  
+  <meta name="twitter:image" content="/images/favicons/favicon-194x194.png" />
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="CLI gem Project">
+  <meta property="og:description" content="Oh man Oh man. I’m not going to lie this was a bit of a challenge for me. I didn’t know what to do or how to start this project. But nothing was going to stop me. I had endless night of using google as my best friend. After watching Avi walk through I was able to start CLI gem which gave me steps in the right direction. I did tons of brainstorming I came up with an idea that would let me gather the most recent news article from the NYT from various categories. I think the scraping was the best part for me in general. I was kinda nervous at first but I was able to gather all the information I need to be able to have my CLI  gem working.
+
+">
+  <meta property="og:image" content="/images/favicons/favicon-194x194.png" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/images/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  
+  <link rel="stylesheet" href="/css/main.css?1509671625612190074">
+  <link rel="canonical" href="http://localhost:4000/2017/01/14/cli_gem_project/">
+  <link rel="alternate" type="application/rss+xml" title="The Coders Journey" href="/feed.xml">
+</head>
+
+
+  <body>
+    <span class="mobile btn-mobile-menu">
+  <i class="icon icon-list btn-mobile-menu__icon"></i>
+  <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+</span>
+
+<header class="panel-cover" style="background-image: url(/images/cover.jpg)">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <a href="/" title="link to home of The Coders Journey">
+          <img src="/images/profile.jpg" class="user-image" alt="My Profile Photo">
+          <h1 class="panel-cover__title panel-title">The Coders Journey</h1>
+        </a>
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">The Journey 
+</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="link to The Coders Journey blog" class="blog-button">Blog</a></li>
+            </ul>
+          </nav>
+
+          <nav class="cover-navigation navigation--social">
+            <ul class="navigation">
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            <!-- RSS -->
+            <li class="navigation__item">
+              <a href="/feed.xml" title="Subscribe" target="_blank">
+                <i class="icon icon-rss"></i>
+                <span class="label">RSS</span>
+              </a>
+            </li>
+
+            </ul>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        <article class="post-container post-container--single">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="14 Jan 2017" class="post-meta__date date">14 Jan 2017</time>
+      
+    </div>
+    <h1 class="post-title">CLI gem Project</h1>
+  </header>
+
+  <section class="post">
+    <p>Oh man Oh man. I’m not going to lie this was a bit of a challenge for me. I didn’t know what to do or how to start this project. But nothing was going to stop me. I had endless night of using google as my best friend. After watching Avi walk through I was able to start CLI gem which gave me steps in the right direction. I did tons of brainstorming I came up with an idea that would let me gather the most recent news article from the NYT from various categories. I think the scraping was the best part for me in general. I was kinda nervous at first but I was able to gather all the information I need to be able to have my CLI  gem working.</p>
+
+<p>Very slowly I started to figure out how II wanted to tackle this project. Originally I wanted to put the description of each article as well. But I could think of how that would be possible. I ponder for 2 days and I thought I was stuck. I would talk my ideas through with my best friend and she told me that it would be easier to leave out the description and have the user click the link to read the full article. I gave my best friend the biggest hug because I had a serious coder’s block.</p>
+
+<p>Then all my ideas started to come together and It made me feel good seeing the hard work and my late night being display on my computer. Gave me a lil more confidence in my future in programming.</p>
+
+<p>Please check out me repo and give me ton of feedback.. 
+https://github.com/Idayat8703/news-trending-cli-app</p>
+
+  </section>
+  
+</article>
+
+
+
+      </div>
+
+      <footer class="footer">
+  <span class="footer__copyright">&copy; 2017 . All rights reserved.</span>
+</footer>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="/js/main.js?1509671625612190074"></script>
+
+
+    </div>
+  </body>
+</html>
