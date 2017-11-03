@@ -1,16 +1,16 @@
 # Site settings
-title: The Coders Journey 
+title: The Coders Journey
 header-img: img/home-bg.png
 email: idayat.oshobajo@gmail.com
 copyright_name: Idayat8703
 description: > # this means to ignore newlines until "baseurl:"
-  The Journey 
+  The Journey
 baseurl: "" # the subpath of your site, e.g. /blog
-twitter_username: 
+twitter_username:
 github_username:  Idayat8703
 learn_profile: Idayat8703
 email_username: idayat.oshobajo@gmail.com
-
+resume: images/Idayat-Oshobajo.pdf
 # Build settings
 markdown: kramdown
 highlighter: rouge
